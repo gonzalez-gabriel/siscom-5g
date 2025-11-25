@@ -1,15 +1,22 @@
-"use client"
+'use client';
 
-import { ChevronLeft, ChevronRight } from 'lucide-react'
-import { Button } from '@/components/ui/button'
-import { cn } from '@/lib/utils'
+import { useEffect, useRef, useState } from 'react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
 
 interface SlideNavigationProps {
-  currentSlide: number
-  totalSlides: number
-  onPrevious: () => void
-  onNext: () => void
-  className?: string
+  currentSlide: number;
+  totalSlides: number;
+  onPrevious: () => void;
+  onNext: () => void;
+  className?: string;
+  /** If true, navigation auto-hides after inactivity */
+  autoHide?: boolean;
+  /** Milliseconds to wait before hiding (when autoHide=true) */
+  hideDelay?: number;
+  /** Controlled visibility. If provided, overrides autoHide behavior */
+  visible?: boolean;
 }
 
 export function SlideNavigation({
@@ -17,10 +24,63 @@ export function SlideNavigation({
   totalSlides,
   onPrevious,
   onNext,
-  className
+  className,
+  autoHide = true,
+  hideDelay = 1000,
+  visible,
 }: SlideNavigationProps) {
+  const [isVisible, setIsVisible] = useState<boolean>(visible ?? true);
+  const timeoutRef = useRef<number | null>(null);
+
+  useEffect(() => {
+    if (visible !== undefined) {
+      setIsVisible(visible);
+      return;
+    }
+
+    const show = () => {
+      setIsVisible(true);
+      if (timeoutRef.current) {
+        window.clearTimeout(timeoutRef.current);
+      }
+      if (autoHide) {
+        timeoutRef.current = window.setTimeout(
+          () => setIsVisible(false),
+          hideDelay
+        );
+      }
+    };
+
+    const onMove = () => show();
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') show();
+    };
+
+    document.addEventListener('mousemove', onMove);
+    document.addEventListener('touchstart', onMove);
+    document.addEventListener('keydown', onKey);
+
+    // initial hide if autoHide enabled
+    if (autoHide) setIsVisible(false);
+
+    return () => {
+      document.removeEventListener('mousemove', onMove);
+      document.removeEventListener('touchstart', onMove);
+      document.removeEventListener('keydown', onKey);
+      if (timeoutRef.current) window.clearTimeout(timeoutRef.current);
+    };
+  }, [visible, autoHide, hideDelay]);
+
+  const wrapperClass = cn(
+    'fixed bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-4 z-50 transition-all duration-200',
+    className,
+    isVisible
+      ? 'opacity-100 pointer-events-auto translate-y-0'
+      : 'opacity-0 pointer-events-none translate-y-4'
+  );
+
   return (
-    <div className={cn("fixed bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-4 z-50", className)}>
+    <div className={wrapperClass}>
       <Button
         variant="outline"
         size="icon"
@@ -30,13 +90,13 @@ export function SlideNavigation({
       >
         <ChevronLeft className="h-6 w-6" />
       </Button>
-      
+
       <div className="bg-card/80 backdrop-blur-sm px-6 py-3 rounded-full border">
         <span className="text-lg font-medium">
           {currentSlide + 1} / {totalSlides}
         </span>
       </div>
-      
+
       <Button
         variant="outline"
         size="icon"
@@ -47,5 +107,5 @@ export function SlideNavigation({
         <ChevronRight className="h-6 w-6" />
       </Button>
     </div>
-  )
+  );
 }
