@@ -1,0 +1,57 @@
+# Node.js
+node_modules/
+
+# Next.js
+.next/
+out/
+build/
+.next/cache/
+
+# Production
+dist/
+/.vercel/
+
+# TypeScript
+*.tsbuildinfo
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# pnpm
+.pnpm-store/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Editor directories and files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Test coverage
+coverage/
+coverage-*.json
+
+# Caches
+.cache/
+.parcel-cache/
+/.turbo/
+
+# Misc
+storybook-static/
+
