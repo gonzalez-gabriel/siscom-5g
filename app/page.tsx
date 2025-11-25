@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import {
   PresentationSlide,
   SlideContent,
@@ -39,6 +39,9 @@ export default function Presentation() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const totalSlides = 19;
 
+  const touchStartX = useRef<number | null>(null);
+  const touchEndX = useRef<number | null>(null);
+
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'ArrowRight' && currentSlide < totalSlides - 1) {
@@ -51,6 +54,32 @@ export default function Presentation() {
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [currentSlide]);
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+    touchEndX.current = null;
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    touchEndX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    if (touchStartX.current === null || touchEndX.current === null) return;
+    const dx = touchStartX.current - touchEndX.current;
+    const threshold = 50; // px required to consider as swipe
+
+    if (dx > threshold) {
+      // swipe left -> next
+      setCurrentSlide((prev) => Math.min(totalSlides - 1, prev + 1));
+    } else if (dx < -threshold) {
+      // swipe right -> previous
+      setCurrentSlide((prev) => Math.max(0, prev - 1));
+    }
+
+    touchStartX.current = null;
+    touchEndX.current = null;
+  };
 
   const slides = [
     // Slide 1: Portada
@@ -994,7 +1023,13 @@ export default function Presentation() {
   ];
 
   return (
-    <div className="relative w-full h-screen overflow-hidden">
+    <div
+      className="relative w-full h-screen overflow-hidden"
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
+      style={{ WebkitOverflowScrolling: 'touch', touchAction: 'pan-y' }}
+    >
       <div
         className="flex transition-transform duration-500 ease-in-out h-full"
         style={{ transform: `translateX(-${currentSlide * 100}%)` }}
