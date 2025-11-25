@@ -72,7 +72,7 @@ export default function Presentation() {
         </SlideSubtitle>
         <div className="space-y-4 text-xl md:text-2xl text-muted-foreground">
           <p className="font-semibold">González Gabriel Isaías</p>
-          <p>Universidad Nacional de Tucumán - FACEyT</p>
+          <p>Universidad Nacional de Tucumán - FACET</p>
         </div>
         <div className="absolute bottom-24 left-1/2 -translate-x-1/2">
           <Signal className="h-16 w-16 text-primary/20 animate-pulse" />
