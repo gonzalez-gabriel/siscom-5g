@@ -1,0 +1,84 @@
+/* Estilos específicos para desktop - pantallas grandes */
+@media (min-width: 768px) {
+  /* Mejora de espaciado en desktop */
+  .slide-content-desktop {
+    padding: 4rem;
+  }
+
+  /* Tamaños de texto optimizados para desktop */
+  .slide-title-xl {
+    font-size: 5rem;
+    line-height: 1.1;
+  }
+
+  .slide-title-lg {
+    font-size: 4rem;
+    line-height: 1.2;
+  }
+
+  .slide-title-md {
+    font-size: 3.5rem;
+    line-height: 1.2;
+  }
+
+  /* Grids más amplios en desktop */
+  .desktop-grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .desktop-grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .desktop-grid-5 {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  /* Cards más grandes en desktop */
+  .desktop-card {
+    padding: 2rem;
+  }
+
+  /* Iconos más grandes en desktop */
+  .desktop-icon-lg {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  .desktop-icon-xl {
+    width: 5rem;
+    height: 5rem;
+  }
+
+  /* Navegación más espaciada */
+  .desktop-navigation {
+    bottom: 3rem;
+    gap: 1.5rem;
+  }
+
+  /* Tablas con mejor espaciado */
+  .desktop-table td,
+  .desktop-table th {
+    padding: 1.5rem;
+  }
+
+  /* Hover effects más pronunciados */
+  .desktop-hover-scale:hover {
+    transform: scale(1.1);
+  }
+}
+
+@media (min-width: 1024px) {
+  /* Pantallas extra grandes */
+  .slide-title-xl {
+    font-size: 6rem;
+  }
+
+  .slide-title-lg {
+    font-size: 4.5rem;
+  }
+
+  .desktop-card {
+    padding: 3rem;
+  }
+}
