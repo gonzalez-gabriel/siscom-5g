@@ -17,9 +17,9 @@ export function PresentationSlide({
   return (
     <div
       className={cn(
-        'w-full h-screen flex flex-col items-center justify-center',
-        'p-3 sm:p-6 md:p-12 lg:p-16',
-        'relative overflow-hidden',
+        'w-full min-h-screen flex flex-col items-center justify-center',
+        'p-3',
+        'relative',
         background || 'bg-background',
         className
       )}
@@ -69,7 +69,7 @@ export function SlideTitle({
   return (
     <h1
       className={cn(
-        'font-bold tracking-tight mb-2 sm:mb-6 md:mb-8 text-balance',
+        'font-bold tracking-tight mb-2 sm:mb-6 md:mb-8 text-balance text-center',
         sizeClasses[size],
         className
       )}
