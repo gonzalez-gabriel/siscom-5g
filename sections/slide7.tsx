@@ -2,34 +2,15 @@ import {
   PresentationSlide,
   SlideContent,
   SlideTitle,
-  SlideSubtitle,
-  SlideText,
 } from '@/components/presentation-slide';
-import { Badge } from '@/components/ui/badge';
 import { Card } from '@/components/ui/card';
-import {
-  Cpu,
-  Database,
-  Factory,
-  Globe,
-  Lock,
-  MessageSquare,
-  Network,
-  Radio,
-  Signal,
-  Smartphone,
-  TrendingUp,
-  Video,
-  Wifi,
-  Zap,
-} from 'lucide-react';
-import { cn } from '@/lib/utils';
+import { Cpu, Database, Globe, Lock, Network, Radio } from 'lucide-react';
 
 function slide7() {
   return (
     <PresentationSlide key={6}>
       <SlideContent>
-        <SlideTitle size="md" className="text-center mb-2 sm:mb-8 md:mb-12">
+        <SlideTitle size="md" className="text-center mb-2 sm:mb-8 md:mb-2">
           IoT y M2M: ¿Son lo mismo?
         </SlideTitle>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-2 sm:gap-8 md:gap-12 max-w-5xl mx-auto">
@@ -127,7 +108,7 @@ function slide7() {
             </div>
           </Card>
         </div>
-        <p className="text-center text-sm sm:text-lg md:text-xl mt-4 sm:mt-8 md:mt-12 font-semibold text-primary">
+        <p className="text-center text-sm sm:text-lg md:text-xl mt-4 sm:mt-8 md:mt-4 font-semibold text-primary">
           M2M es el músculo, IoT es el cerebro
         </p>
       </SlideContent>

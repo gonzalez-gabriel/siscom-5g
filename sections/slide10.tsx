@@ -2,36 +2,15 @@ import {
   PresentationSlide,
   SlideContent,
   SlideTitle,
-  SlideSubtitle,
-  SlideText,
 } from '@/components/presentation-slide';
-import { Badge } from '@/components/ui/badge';
 import { Card } from '@/components/ui/card';
-import {
-  Building2,
-  Car,
-  Factory,
-  Globe,
-  Home,
-  Hospital,
-  MessageSquare,
-  Network,
-  Radio,
-  Signal,
-  Smartphone,
-  Sprout,
-  TrendingUp,
-  Video,
-  Wifi,
-  Zap,
-} from 'lucide-react';
-import { cn } from '@/lib/utils';
+import { Building2, Car, Factory, Home, Hospital, Sprout } from 'lucide-react';
 
 function slide10() {
   return (
     <PresentationSlide key={9}>
       <SlideContent>
-        <SlideTitle size="md" className="text-center mb-8 sm:mb-12 md:mb-16">
+        <SlideTitle size="md" className="text-center mb-8 sm:mb-12 md:mb-8">
           5G IoT en acción: Casos reales
         </SlideTitle>
         {/* Grid responsive: 2 columnas en mobile, 3 en desktop */}

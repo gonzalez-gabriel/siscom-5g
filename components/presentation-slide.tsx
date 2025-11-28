@@ -61,7 +61,7 @@ export function SlideTitle({
 }: SlideTitleProps) {
   const sizeClasses = {
     sm: 'text-base sm:text-3xl md:text-4xl lg:text-5xl',
-    md: 'text-lg sm:text-4xl md:text-5xl lg:text-6xl',
+    md: 'text-lg sm:text-4xl md:text-4xl lg:text-4xl',
     lg: 'text-xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl',
     xl: 'text-2xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl',
   };

@@ -2,31 +2,14 @@ import {
   PresentationSlide,
   SlideContent,
   SlideTitle,
-  SlideSubtitle,
-  SlideText,
 } from '@/components/presentation-slide';
-import { Badge } from '@/components/ui/badge';
 import { Card } from '@/components/ui/card';
-import {
-  Factory,
-  Globe,
-  MessageSquare,
-  Network,
-  Radio,
-  Signal,
-  Smartphone,
-  TrendingUp,
-  Video,
-  Wifi,
-  Zap,
-} from 'lucide-react';
-import { cn } from '@/lib/utils';
 
 function slide17() {
   return (
     <PresentationSlide key={16}>
       <SlideContent>
-        <SlideTitle size="md" className="text-center mb-8 sm:mb-12 md:mb-16">
+        <SlideTitle size="md" className="text-center mb-8 sm:mb-12 ">
           5G + IoT + M2M = Revolución Digital
         </SlideTitle>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8 max-w-5xl mx-auto">

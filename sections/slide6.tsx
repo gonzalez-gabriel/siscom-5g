@@ -27,10 +27,10 @@ function slide6() {
   return (
     <PresentationSlide key={5}>
       <SlideContent>
-        <SlideTitle size="md" className="text-center mb-2 sm:mb-8 md:mb-12">
+        <SlideTitle size="md" className="text-center mb-2 sm:mb-8 md:mb-2">
           ¿Cómo lo hace posible?
         </SlideTitle>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-6 md:gap-8 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-6 md:gap-4 max-w-4xl mx-auto">
           <Card className="p-2 sm:p-6 md:p-8 border-2 hover:shadow-xl transition-all hover:scale-105">
             <Signal className="h-5 w-5 sm:h-10 sm:w-10 md:h-12 md:w-12 text-primary mb-1 sm:mb-3" />
             <h3 className="text-sm sm:text-xl md:text-2xl font-bold mb-0.5 sm:mb-3">

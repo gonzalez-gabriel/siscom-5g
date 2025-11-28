@@ -2,37 +2,21 @@ import {
   PresentationSlide,
   SlideContent,
   SlideTitle,
-  SlideSubtitle,
-  SlideText,
 } from '@/components/presentation-slide';
 import { Badge } from '@/components/ui/badge';
 import { Card } from '@/components/ui/card';
-import {
-  CheckCircle2,
-  Factory,
-  Globe,
-  MessageSquare,
-  Network,
-  Radio,
-  Signal,
-  Smartphone,
-  TrendingUp,
-  Video,
-  Wifi,
-  Zap,
-} from 'lucide-react';
-import { cn } from '@/lib/utils';
+import { CheckCircle2, Signal } from 'lucide-react';
 
 function slide16() {
   return (
     <PresentationSlide key={15}>
       <SlideContent>
-        <SlideTitle size="md" className="text-center mb-8 sm:mb-12 md:mb-16">
+        <SlideTitle size="md" className="text-center mb-8 sm:mb-12 md:mb-6">
           El futuro del 5G: 5G Advanced
         </SlideTitle>
         <div className="max-w-5xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8 mb-6 sm:mb-8 md:mb-12">
-            <Card className="p-4 sm:p-6 md:p-8 border-2">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8 mb-6 sm:mb-8 ">
+            <Card className="gap-2 p-4 sm:p-6 md:p-8 border-2">
               <h3 className="text-2xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4 md:mb-6 text-center">
                 5G
               </h3>
@@ -47,7 +31,7 @@ function slide16() {
               </div>
             </Card>
 
-            <Card className="p-4 sm:p-6 md:p-8 border-2 sm:border-4 border-primary shadow-xl sm:shadow-2xl shadow-primary/30">
+            <Card className="gap-2 p-4 sm:p-6 md:p-8 border-2 sm:border-4 border-primary shadow-xl sm:shadow-2xl shadow-primary/30">
               <h3 className="text-2xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4 md:mb-6 text-center text-primary">
                 5G Advanced
               </h3>

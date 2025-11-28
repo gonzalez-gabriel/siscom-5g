@@ -2,34 +2,17 @@ import {
   PresentationSlide,
   SlideContent,
   SlideTitle,
-  SlideSubtitle,
-  SlideText,
 } from '@/components/presentation-slide';
-import { Badge } from '@/components/ui/badge';
 import { Card } from '@/components/ui/card';
-import {
-  Factory,
-  Globe,
-  MessageSquare,
-  Network,
-  Radio,
-  Signal,
-  Smartphone,
-  TrendingUp,
-  Video,
-  Wifi,
-  Zap,
-} from 'lucide-react';
-import { cn } from '@/lib/utils';
 
 function slide12() {
   return (
     <PresentationSlide key={11}>
       <SlideContent>
-        <SlideTitle size="md" className="text-center mb-2 sm:mb-8 md:mb-12">
+        <SlideTitle size="md" className="text-center mb-2 ">
           Ya está sucediendo: Ciudades inteligentes
         </SlideTitle>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-2 sm:gap-6 md:gap-8 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-2 sm:gap-6 max-w-5xl mx-auto">
           {[
             {
               flag: '🇪🇸',
@@ -54,7 +37,7 @@ function slide12() {
           ].map((item, i) => (
             <Card
               key={i}
-              className="p-2 sm:p-6 md:p-8 border-2 hover:shadow-xl transition-all"
+              className="p-2 sm:p-6 md:p-8 border-2 hover:shadow-xl transition-all gap-2"
             >
               <div className="flex items-center gap-1.5 sm:gap-4 mb-1 sm:mb-4">
                 <span className="text-xl sm:text-5xl">{item.flag}</span>

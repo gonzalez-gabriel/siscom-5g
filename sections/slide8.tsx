@@ -2,31 +2,13 @@ import {
   PresentationSlide,
   SlideContent,
   SlideTitle,
-  SlideSubtitle,
-  SlideText,
 } from '@/components/presentation-slide';
-import { Badge } from '@/components/ui/badge';
-import { Card } from '@/components/ui/card';
-import {
-  Factory,
-  Globe,
-  MessageSquare,
-  Network,
-  Radio,
-  Signal,
-  Smartphone,
-  TrendingUp,
-  Video,
-  Wifi,
-  Zap,
-} from 'lucide-react';
-import { cn } from '@/lib/utils';
 
 function slide8() {
   return (
     <PresentationSlide key={7}>
       <SlideContent>
-        <SlideTitle size="md" className="text-center mb-8 sm:mb-12 md:mb-16">
+        <SlideTitle size="md" className="text-center mb-8 sm:mb-12 md:mb-8">
           Las diferencias en detalle
         </SlideTitle>
         <div className="max-w-4xl mx-auto">
